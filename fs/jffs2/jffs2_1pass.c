@@ -563,6 +563,8 @@ add_node(struct b_list *list)
 	memBase->index = index;
 	list->listMemBase = memBase;
 	list->listCount++;
+	/* Set datacrc to CRC_UNKNOWN because of the possibility of dirty memory data */
+	b->datacrc = CRC_UNKNOWN;
 	return b;
 }
 
